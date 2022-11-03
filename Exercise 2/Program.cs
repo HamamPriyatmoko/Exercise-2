@@ -14,7 +14,10 @@ namespace exercise2
 
         int n;
 
-        
+        void input()
+        {
+
+        }
 
     }
 }
