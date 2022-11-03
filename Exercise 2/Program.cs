@@ -88,20 +88,20 @@ namespace exercise2
                     if (i < hp) // if the greater element is on the left of the element
                     {
                         //Swap the element at index i with the element at index j
-                        swap(i, j);
+                        swap(i, hp);
                         mov_count++;
                     }
                 }
-                if (low < j)
+                if (low < hp)
                 {
-                    swap(low, j);
+                    swap(low, hp);
                     mov_count++;
                 }
                 // sort the list on the left of the pivot using quick sort
-                q_sort(low, j - 1);
+                q_sort(low, hp - 1);
 
                 //Sort the list on the right of pivot using quick sort
-                q_sort(j + 1, high);
+                q_sort(hp + 1, high);
                 ch = char.Parse(Console.ReadLine().ToUpper());
             } while ((ch == 'y'));
         }
