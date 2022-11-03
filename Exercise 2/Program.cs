@@ -8,7 +8,7 @@ namespace exercise2
 {
     class Program
     {
-        int[] arr = new int[20];
+        int[] hamam = new int[20];
         int cmp_count = 0;
         int mov_count = 0;
         int i ;
@@ -37,7 +37,7 @@ namespace exercise2
             {
                 Console.Write("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
-                arr[i] = Int32.Parse(s1);
+                hamam[i] = Int32.Parse(s1);
             }
         }
 
@@ -45,9 +45,9 @@ namespace exercise2
         {
             int temp;
 
-            temp = arr[x];
-            arr[x] = arr[y];
-            arr[y] = temp;
+            temp = hamam[x];
+            hamam[x] = hamam[y];
+            hamam[y] = temp;
         }
         public void q_sort(int low, int high)
         {
@@ -64,12 +64,12 @@ namespace exercise2
                 i = low + 1;
                 hp = high;
 
-                pivot = arr[low];
+                pivot = hamam[low];
 
                 while (i <= hp)
                 {
                     //Search for an element greater than pivot
-                    while ((arr[i] <= pivot) && (i <= high))
+                    while ((hamam[i] <= pivot) && (i <= high))
                     {
                         i++;
                         cmp_count++;
@@ -77,7 +77,7 @@ namespace exercise2
                     cmp_count++;
 
                     //Search for an element lens than or equal to pivot
-                    while ((arr[hp] > pivot) && (i >= low))
+                    while ((hamam[hp] > pivot) && (i >= low))
                     {
                         hp--;
                         cmp_count++;
@@ -128,16 +128,16 @@ namespace exercise2
                 int ctr = 1;
 
                 //loop to search for the element in the array 
-                while ((item != arr[mid]) && (ctr <= upperbound))
+                while ((item != hamam[mid]) && (ctr <= upperbound))
                 {
-                    if (item == arr[mid])
+                    if (item == hamam[mid])
                         lowerbound = mid + 1;
                     else
                         upperbound = mid - 1;
                     mid = (lowerbound + upperbound) / 2;
                     ctr++;
                 }
-                if (item == arr[mid])
+                if (item == hamam[mid])
                     Console.WriteLine("\n" + item.ToString() + "found at position" + (mid + 1).ToString());
                 else
                     Console.WriteLine("\n" + item.ToString() + " Not found in the array\n");
